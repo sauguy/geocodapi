@@ -1,0 +1,51 @@
+{
+  "resource": "Geocode",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "v1/coordinates",
+  "description": "Coordinates",
+  "explanation": "        <p>Get coordinates from an existing address</p>\n        <p>The <code>\"status\"</code> field within the Geocoding response object contains the status\n        of the request, and may contain debugging information to help you track down why geocoding\n        is not working. The <code>\"status\"</code> field may contain the following values:</p>\n        <ul>\n        <li><code>\"OK\"</code> indicates that no errors occurred; the address was successfully parsed and at\n        least one geocode was returned.</li>\n        <li><code>\"ZERO_RESULTS\"</code> indicates that the geocode was successful but returned no results.\n        This may occur if the geocoder was passed a non-existent <code>address</code>.</li>\n\n        <li><code>OVER_DAILY_LIMIT</code> indicates any of the following:\n        <ul>\n        <li>The API key is missing or invalid.</li>\n        <li>Billing has not been enabled on your account.</li>\n        <li>A self-imposed usage cap has been exceeded.</li>\n        <li>The provided method of payment is no longer valid (for example, a\n        credit card has expired).</li>\n        </ul>\n        </li>\n        <li><code>\"OVER_QUERY_LIMIT\"</code> indicates that you are over your quota.</li>\n        <li><code>\"REQUEST_DENIED\"</code> indicates that your request was denied.</li>\n        <li><code>\"INVALID_REQUEST\"</code> generally indicates that the query (<code>address</code>,\n        <code>components</code> or <code>latlng</code>) is missing.</li>\n        <li><code>\"UNKNOWN_ERROR\"</code> indicates that the request could not be\n        processed due to a server error. The request may succeed if you\n        try again.</li>\n        </ul>\n",
+  "parameters": [
+    {
+      "name": "address",
+      "description": "The address to resolve"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "v1/coordinates?address=checkpoint+charlie",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "address": "checkpoint charlie"
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"search\": \"checkpoint charlie\",\n  \"address\": \"Friedrichstraße 43-45, 10117 Berlin, Germany\",\n  \"latitude\": \"52.5074434\",\n  \"longitude\": \"13.3903913\",\n  \"status\": \"OK\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"1cbe8e31fc2b5031fab28e7746996139\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "d3597c15-487c-4615-88a2-685b78def2fd",
+        "X-Runtime": "0.008109",
+        "Content-Length": "152"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

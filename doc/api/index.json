@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "name": "Geocode",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Coordinates",
+          "link": "geocode/coordinates.json",
+          "groups": "all",
+          "route": "v1/coordinates",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}
