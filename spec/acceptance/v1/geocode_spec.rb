@@ -1,6 +1,14 @@
 require 'acceptance_helper'
 
 resource 'Geocode' do
+  header 'Authorization', :authorization_header
+
+  let(:authorization_header) do
+    'Basic ' + Base64.encode64(
+       ACCESS_CREDENTIALS[:login] + ':' + ACCESS_CREDENTIALS[:password]
+     )
+  end
+
   let(:geo_resolver) do
     instance_double('geo_resolver', coordinates: coord_hash)
   end

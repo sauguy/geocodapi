@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe V1::GeocodeController, type: :controller do
+  include AuthHelper
+
   describe '#coordinates' do
     let(:geo_resolver) do
       instance_double('geo_resolver', coordinates: coord_hash)
@@ -9,6 +11,8 @@ describe V1::GeocodeController, type: :controller do
     before do
       allow_any_instance_of(described_class)
         .to receive(:geo_resolver).and_return(geo_resolver)
+
+      basic_auth
 
       get :coordinates, params: { address: search }
     end

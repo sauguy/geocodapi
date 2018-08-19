@@ -20,8 +20,7 @@
       "request_path": "v1/coordinates?address=checkpoint+charlie",
       "request_body": null,
       "request_headers": {
-        "Host": "example.org",
-        "Cookie": ""
+        "Authorization": "Basic cmFuZG9tOnBhc3N3b3Jk\n"
       },
       "request_query_parameters": {
         "address": "checkpoint charlie"
@@ -31,18 +30,6 @@
       "response_status_text": "OK",
       "response_body": "{\n  \"search\": \"checkpoint charlie\",\n  \"address\": \"Friedrichstraße 43-45, 10117 Berlin, Germany\",\n  \"latitude\": \"52.5074434\",\n  \"longitude\": \"13.3903913\",\n  \"status\": \"OK\"\n}",
       "response_headers": {
-        "X-Frame-Options": "SAMEORIGIN",
-        "X-XSS-Protection": "1; mode=block",
-        "X-Content-Type-Options": "nosniff",
-        "X-Download-Options": "noopen",
-        "X-Permitted-Cross-Domain-Policies": "none",
-        "Referrer-Policy": "strict-origin-when-cross-origin",
-        "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"1cbe8e31fc2b5031fab28e7746996139\"",
-        "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "d3597c15-487c-4615-88a2-685b78def2fd",
-        "X-Runtime": "0.008109",
-        "Content-Length": "152"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
