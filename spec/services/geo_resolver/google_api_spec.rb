@@ -35,5 +35,18 @@ describe ::GeoResolver::GoogleApi do
         expect(subject.coordinates('tchackpoint marty')).to eq expected_return
       end
     end
+
+    context 'when the third party api has a problem' do
+      let(:expected_return) { { status: '500' } }
+
+      before do
+        stub_request(:get, /#{API_CONFIGS.dig('google', 'geocode_endpoint')}/)
+          .to_return(status: 500, body: '')
+      end
+
+      it do
+        expect(subject.coordinates('checkpoint charlie')).to eq(expected_return)
+      end
+    end
   end
 end
